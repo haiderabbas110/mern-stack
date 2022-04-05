@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed Page</title>
+</head>
+
+<body>
+    <h2>Bus</h2>
+    <%= comments %>
+    <p><% buses.forEach(function(bus){ %></p>
+        <ul>
+
+                <li><%= bus.name %></li>
+                <li><%= bus.model %></li>
+                <li><%= bus.color %></li>
+                <li><%= bus.engine %></li>
+
+
+
+        </ul>
+    <% }) %>
+<h2>Cars</h2>
+    <% cars.forEach(function(car){ %>
+
+        <ul>
+            <li> <%= car.name %></li>
+            <li> <%= car.model %></li>
+            <li> <%= car.color %></li>
+            <li> <%= car.engine %></li>
+        </ul>
+
+    <% })  %>
+</body>
+
+</html>
