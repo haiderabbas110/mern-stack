@@ -21,5 +21,11 @@
   "repository": {
     "type": "git",
     "url": "haider.abbas"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.18.0",
+    "@typescript-eslint/parser": "^5.18.0",
+    "eslint": "^8.12.0",
+    "eslint-config-google": "^0.14.0"
   }
 }
