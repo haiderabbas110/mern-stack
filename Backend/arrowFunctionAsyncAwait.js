@@ -5,24 +5,25 @@ const axios = require('axios');
 app.get('/arrow', (req, res) => {
 
 
-    const car = ['alto','swift','mehran','taxi'];
 
-    res.send(car.map(car => car.length) );
+    //this keyword only can be use on regular function not in arrow function
+    const parent = {
+        mom_name: "abc",
+        mother: function () {
+            return `${this.mom_name} is my mother.`;
+        },
+    };
+    console.log(parent.mother());
 
-    
-    //promise then await
-    const fetchPromise = axios.get('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
-    fetchPromise
-    .then( response => {
-        return response.data;
-    })
-    .then( json => {
-        console.log(json[0].name);
-    }).catch( error => {
-        console.error(`Could not get products: ${error}`);
-      });
-    //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
-
+    //promise then await 
+    async function abc() {
+        try {
+            const fetchPromise = await axios.get('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
+            console.log(fetchPromise.data);
+        } catch (error) {
+            console.log(`Bachaoo....! ${error}`)
+        }
+    }
+    abc();
 });
-
 app.listen(port);
