@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"></script>
+
+    <title>SPA Chat</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .chat-visible-area {
+            margin-top: 20px;
+        }
+
+        .chat-visible-area h1 {
+            font-family: arial;
+            ;
+            text-align: center;
+
+
+        }
+
+        .form-area {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+
+        }
+
+        .form-area form {
+            display: flex;
+        }
+
+        .form-area input {
+            width: 90%;
+            padding: 20px;
+            background-color: #6ac58e66;
+            border: 0;
+        }
+
+        .form-area input[type=button] {
+            width: 20%;
+            background-color: #6ac58e;
+            cursor: pointer;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="chat-visible-area">
+        <h1 id="messagePlace"></h1>
+        <div class="chat-wrapper">
+
+        </div>
+    </div>
+
+    <div class="form-area">
+        <form action="post">
+            <input type="text" id="chatMessge" placeholder="Enter your chat here to send">
+            <input type="button" onclick="sendHandler()" value="Send">
+        </form>
+    </div>
+
+    <script>
+        var socket = io();
+        
+        socket.on('chat message',function(msg){
+            document.getElementById("messagePlace").innerHTML = msg;
+        });
+        const sendHandler = () => {
+            var message = document.getElementById("chatMessge").value;
+            // document.getElementById("messagePlace").innerHTML = message;
+            socket.emit('chat message', message);
+        }
+
+    </script>
+</body>
+
+</html>
