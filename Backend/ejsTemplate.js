@@ -1,4 +1,4 @@
-const express = require('express');
+import  express from 'express'
 // const ejs = require("ejs");
 const app = express();
 const port = 8000
