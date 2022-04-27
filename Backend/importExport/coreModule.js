@@ -4,3 +4,4 @@ const haider = () => {
     console.log([44,44,44,...a]);
 }
 export {haider,ali};
+
