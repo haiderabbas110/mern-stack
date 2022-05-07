@@ -2,12 +2,17 @@ import express from 'express';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import bodyParser from 'body-parser';
-
+import cookieSession from 'cookie-session';
 // create application/json parser
 var jsonParser = bodyParser.json()
 
 // create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
+
+app.use(cookieSession({
+    keys: ['ss'],
+
+}));
 
 const app  = express();
 const port = 8000;

@@ -11,7 +11,7 @@ app.get('/user/:email',(req,res) => {
 });
 
 //feed data in render view
-app.get('/data/feed',(req,res) => {
+app.get('/data/feeds',(req,res) => {
 
     let cars = [
         {'name':'Carolla','model':2022,'engine':'atlis','color':'red'},
@@ -36,4 +36,6 @@ app.get('/data/feed',(req,res) => {
 });
 
 
-app.listen(port);
+app.listen(port,function(){
+    console.log(`${port} -> This port has been start`);
+});
