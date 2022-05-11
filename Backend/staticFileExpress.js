@@ -5,14 +5,15 @@ import {fileURLToPath} from 'url';
 const app = express();
 const PORT = 3000;
 
-/* const __filename = fileURLToPath(import.meta.url);
+ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
- */
- app.use(express.static('public'));
-// app.use("/static", express.static('public'));
-//virtual path.
 
-// app.use('/myfolder', express.static(path.join(__dirname, 'public')))
+app.use(express.static('public'));
+
+//virtual path.
+// app.use("/myfolder", express.static('public'));
+// app.use('/fold', express.static(path.join(__dirname, 'public')))
+
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
