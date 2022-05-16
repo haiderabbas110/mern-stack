@@ -1,4 +1,6 @@
+import { rejects } from 'assert';
 import express from 'express';
+import { resolve } from 'path';
 const app = express();
 const port = 8000;
 
@@ -72,6 +74,12 @@ app.get('/callbackhell',function(req, res){
 });
 
 app.get('/promise',(req,res) => {
+<<<<<<< HEAD
+=======
+
+
+    
+>>>>>>> 1e9f9d325bb6dcc6a5f276d65096f92e7eb3d706
     //Formula of promise: pending, resolve, error
     //Producing Promise.
     const promiseObjs = new Promise((resolve,rejects) => {
