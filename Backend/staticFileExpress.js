@@ -8,6 +8,16 @@ const PORT = 3000;
  const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+
+let pubPath = () => {
+    express.static('public')
+    console.log("asfdf")
+}
+
+ app.use(pubPath);
+// app.use("/static", express.static('public'));
+//virtual path.
+
 app.use(express.static('public'));
 
 //virtual path.
