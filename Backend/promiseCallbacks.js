@@ -1,4 +1,6 @@
+import { rejects } from 'assert';
 import express from 'express';
+import { resolve } from 'path';
 const app = express();
 const port = 8000;
 
@@ -66,9 +68,44 @@ app.get('/callbackhell',function(req, res){
 
 app.get('/promise',(req,res) => {
 
-    const getAge = () => {
-        let age = [3]
+
+    
+    //Formula of promise: pending, resolve, error
+    //Producing Promise.
+    const promiseObjs = new Promise((resolve,rejects) => {
+        setTimeout(()=>{
+            let salary = [1000,2000,3000,4000];
+            resolve(salary);
+            //rejects("Error while getting reslult");
+        },2000);
+    });
+    const empData = (salary) => {
+        return new Promise((resove,rejects) => {
+            setTimeout((salary)=>{
+                let objEmp = {
+                    name:"ali",
+                    age: 22,
+                    address:{
+                        city:"karachi",
+                        house:"t570"
+                    }
+                }
+                let {name,age} = objEmp;
+                resolve(`My name is ${name} and my age is ${age} and my salary is ${salary}`);
+            },2000,salary)
+        })
     }
+    //consume, using promise
+    promiseObjs.then((salary) =>{
+        console.log(salary);
+        return empData(salary);
+    })
+    .then((mydata)=>{
+        console.log(mydata)
+    })
+    .catch((error)=>{
+        console.log(error)
+    })
 
     //stages 1:Pending, 2:Sucess, 3:Reject
     /* let p = new Promise(function(resolve,reject){
