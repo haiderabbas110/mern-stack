@@ -3,11 +3,12 @@ import express from "express";
 const app = express();
 const port = 3009;
 const myLogger = (req, res, next) => {
-    console.log("my logger 1");
+        console.log("my logger 1");
     next(); 
 }
 const myLogger2 = (req, res, next) => {
-    console.log("my logger 2");
+    
+    let a = 2;
     next(); 
 }
 
@@ -27,6 +28,15 @@ app.get('/login', (req, res) => {
     console.log('Request Type:', req.method)
     next()
 }) */
+
+function a(){
+    var a = ['a','b','c','d',];
+
+    console.log(a)
+}
+
+
+a();
 
 app.get('/user/:id', (req, res, next) => {
     res.send('USER')
