@@ -18,13 +18,16 @@ io.on('connection', (socket) => {
         io.emit('chat message', msg);
     });
 });
-
+const  users = {}
 io.on('connection', function (socket) {
-    socket.on('send-nickname', function (nickname) {
-        socket.nickname = nickname;
-        users.push(socket.nickname);
-        console.log(users);
-    });
+    var total=io.engine.clientsCount;
+    socket.emit('getCount',total)
+    // console.log(total);
+    socket.on('login', function(data){
+        console.log('only ' + total + ' connected');
+        // saving userId to object with socket ID
+        // users[socket.id] = total;
+      });
 });
 
 server.listen(3000, () => {
