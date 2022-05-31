@@ -8,12 +8,17 @@ import http from 'http';
 import EventEmitter from 'events';
 const eventEmitter = new EventEmitter();
 
-eventEmitter.on('start',() => {
-
-    console.log("start hojao");
+eventEmitter.on('start',(arg) => {
+    console.log("start hojao is" + arg +"ka sth");
 
 });
-eventEmitter.emit('start');
+
+eventEmitter.on('start',(arg,arg1) => {
+    console.log("tm bi ready hojao is" + arg1 + "sath");
+
+});
+eventEmitter.emit('start',2,4);
+
 
 const createBody = (req,res) => {
     res.writeHead(200, {'content-Type':'text/html'});
