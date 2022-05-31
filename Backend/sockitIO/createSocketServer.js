@@ -1,5 +1,4 @@
-const { Server } = require("socket.io");
-
+import {Server} from 'socket.io';
 const io = new Server({ /* options */ });
 
 io.on("connection", (socket) => {
@@ -13,4 +12,4 @@ io.on("connection", (socket) => {
 
 
 
-io.listen(8000);
+io.listen(8080);
