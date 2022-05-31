@@ -1,14 +1,18 @@
 import express from 'express'
 import cookieParser from 'cookie-parser';
+import EventEmitter from 'events';
+const eventEmitter = new EventEmitter();
 const app = express();
 const port = 8001
 
 
 app.use(cookieParser());
-
+var i;
 //feed data in render view
 app.get('/set-cookie', (req, res) => {
-    res.cookie("city","karachi");
+    i++;
+    res.cookie("city","karachi with" + 2);
+
     res.send("cookie set")
 });
 

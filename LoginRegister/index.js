@@ -40,6 +40,12 @@ app.get('/', checkAuthenticated, function (req, res) {
     res.render('index', { name: req.user.name });
 
 });
+
+app.get('/user-downloads', checkAuthenticated, function (req, res) {
+
+    res.render('download', { data: 'book1',name:req.body.name });
+
+});
 const users = [];
 app.get('/login', checkNotAuthenticated, function (req, res) {
 
