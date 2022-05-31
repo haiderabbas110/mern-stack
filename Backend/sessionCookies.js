@@ -11,17 +11,17 @@ app.use(cookieSession({
     maxAge:5000
 
 }));
-app.use(cookieParser());
+// app.use(cookieParser());
 
 //feed data in render view
 app.get('/data/session', (req, res) => {
     
     // sessionStorage.setItem('setBirthday', Date());
     // req.session.views = (req.session.views || 0) + 1
-  req.session.haider++;
-  console.log(req.session);
-    res.send(req.session.haider + ' views')
 
+  req.session.ali = ( req.session.ali || 0 ) + 1 
+//   console.log(pageViews);
+    res.send(req.session.ali + ' views')
 
 });
 
