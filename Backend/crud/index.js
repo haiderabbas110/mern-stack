@@ -1,41 +1,16 @@
 import express from "express";
 import bodyParser from "body-parser";
-import { MongoClient, ServerApiVersion } from 'mongodb';
 import mongoose from 'mongoose';
+import {router} from './route/router.js';
 const app = express();
 const port = 8080;
 const mongoDBURI = 'mongodb+srv://haiderabbas:haider555@cluster0.hxjyrxy.mongodb.net/?retryWrites=true&w=majority'
 app.use(bodyParser.urlencoded({ extended: false }))
 
+app.use(router);
 app.set('view engine', 'ejs');
-app.get('/', (req, res) => {
-  res.render('index', { name: "ali" })
-})
 
-app.set('view engine', 'ejs');
-app.get('/login', (req, res) => {
-  res.render('/login.ejs')
-})
 
-app.set('view engine', 'ejs');
-app.get('/register', (req, res) => {
-  res.render('/')
-});
-
-//APis
-
-//Create user
-app.post('/api/users', (req, res) => {
-  console.log(req.body.user_name);
-  let userData = {
-    name: res.body
-  }
-  res.send("create user");
-});
-
-app.get('/api/users', (req, res) => {
-  res.send("get user")
-})
 
 app.listen(port, function () {
   console.log(`Port is now running @ ${port}`)
