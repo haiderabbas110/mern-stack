@@ -1,7 +1,7 @@
-const express = require('express');
+import express from 'express';
 const app = express();
 const port = 3000;
-const {MongoClient, ObjectId} = require('mongodb');
+import {MongoClient, ObjectId} from 'mongodb'
 const uri = 'mongodb+srv://haiderabbas:haider555@cluster0.hxjyrxy.mongodb.net/?retryWrites=true&w=majority';
 
 const client = new MongoClient(uri, {useNewUrlParser: true, useUnifiedTopology: true});
