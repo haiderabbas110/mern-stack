@@ -1,4 +1,4 @@
-import {MongoClient} from 'mongodb';
+import {MongoClient, ObjectId } from 'mongodb';
 
 //Connection with mongo with Mongoose.
 const dbConnection = async function() {
@@ -15,4 +15,4 @@ const dbConnection = async function() {
 }
 
 
-export { dbConnection };
+export { dbConnection, ObjectId };

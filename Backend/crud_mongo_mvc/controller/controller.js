@@ -1,4 +1,4 @@
-import { dbConnection } from '../database/connection.js';
+import { dbConnection, ObjectId } from '../database/connection.js';
 
 const homeview = (req, res) => {
     dbConnection().then((client) => {
@@ -20,18 +20,30 @@ const create = (req, res) => {
 }
 
 const update = (req, res) => {
-    const usersCollection = client.db('test').collection('items');
-    usersCollection.updateOne(
-        { '_id': new ObjectId(req.body._id) },
-        { $set: { 'name': req.body.name, 'email': req.body.email, 'address': req.body.address, 'phone': req.body.phone } },
-        (err, result) => {
-            console.log(result.updatedCount + ' document updated successfully!');
-            res.redirect('/');
-        });
+    console.log(req.params.id);
+    dbConnection().then((client) => {
+        const usersCollection = client.db('test').collection('items');
+        usersCollection.updateOne(
+            { '_id': new ObjectId(req.params.id) },
+            { $set: { 'name': req.body.item, 'color': req.body.color, 'brand': req.body.brand, 'phone': req.body.phone } },
+            (err, result) => {
+                console.log(result.updatedCount + ' document updated successfully!');
+                res.redirect('/items');
+            });
+    });
 }
 
-const updateView = (req,res) => {
-    res.render('../views/updateuser', {id:req.params.id} )
+const updateView = async (req, res) => {
+    dbConnection().then(async (client) => {
+        const userData = await client.db('test').collection('items')
+            .findOne({
+                _id: new ObjectId(req.params.id)
+            });
+        res.render('../views/updateuser', { userData })
+
+    });
+
+
 }
 
 export { homeview, updateView, create, update }

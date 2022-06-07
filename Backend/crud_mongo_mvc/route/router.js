@@ -14,6 +14,6 @@ router.get('/add', (req, res) => {
 // Add view route
 router.get('/update/:id', updateView);
 router.post('/add',create);
-router.put('/update',update);
+router.post('/update/:id',update);
 
 export { router };
