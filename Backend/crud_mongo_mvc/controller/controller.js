@@ -33,7 +33,7 @@ const update = (req, res) => {
     });
 }
 
-const updateView = async (req, res) => {
+const updateView = (req, res) => {
     dbConnection().then(async (client) => {
         const userData = await client.db('test').collection('items')
             .findOne({
