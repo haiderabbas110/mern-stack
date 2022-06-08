@@ -1,28 +1,19 @@
 import express from 'express'
-import {create, update} from '../controller/controller.js'
-import axios from 'axios';
+import { create, update, createView, homeView, updateView } from '../controller/controller.js'
 const router = express.Router();
 
 //Home route
-router.get('/', (req, res) => {
-  res.render('index', { name: "ali" })
-});
-
+router.get('/', homeView);
 
 // Add view route
-router.get('/add', (req, res) => {
-  res.render('../views/adduser.ejs')
-});
+router.get('/add', createView);
 
-// Add view route
-router.get('/update', (req, res) => {
-  axios.get("http://localhost:8080/items/update",{params:{id:req.params.id}}).then(function(userdata){
-    // res.render('../views/updateuser.ejs',{user:userdata.data})
-  })
-  res.render('../views/updateuser.ejs')
-});
+// Update view route
+router.get('/update/:id', updateView);
 
-router.post('/add',create);
-router.put('/update/:id',update);
+
+/*================== Route API For Crud Opr  ========================*/
+router.post('/add', create);
+router.put('/update/:id', update);
 
 export { router };

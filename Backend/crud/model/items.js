@@ -13,6 +13,6 @@ const itemSchema = new mongoose.Schema({
 });
 
 // The alternative to the export model pattern is the export schema pattern.
-const itemsDB = mongoose.model('items', itemSchema);
+const itemsDB = mongoose.model('genetech_items', itemSchema);
 
 export { itemsDB }
