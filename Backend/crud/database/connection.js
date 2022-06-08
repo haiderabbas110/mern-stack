@@ -9,7 +9,7 @@ const dbData = async () => {
         // userFindAndModify:false,
         // userCeatedIndex:true
       });
-      console.log('mongo db connected' + con.connection.host);
+      console.log('mongo db connected ' + con.connection.host);
     } catch (err) {
       console.log(err);
       process.exit(1)
