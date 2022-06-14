@@ -14,6 +14,6 @@ router.get('/update/:id', updateView);
 
 /*================== Route API For Crud Opr  ========================*/
 router.post('/add', create);
-router.put('/update/:id', update);
+router.post('/update/:id', update);
 
 export { router };

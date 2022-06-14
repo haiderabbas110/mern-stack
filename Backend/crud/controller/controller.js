@@ -1,17 +1,16 @@
 import { itemsDB } from '../model/items.js'
 import mongoose from "mongoose";
 
-
 /*================== Render Route Views ========================*/
 const createView = (req, res) => {
     res.render('../views/adduser.ejs')
 }
-const updateView = (req, res) => {
-    
-    const userData = itemsDB.findOne({
-            _id: "62a01f1b30844a41b9b55796"
-        });
-        console.log(userData)
+const updateView = async (req, res) => {
+    const userData = await itemsDB.findOne({
+        _id: mongoose.Types.ObjectId(req.params.id
+        )
+    });
+    console.log(userData)
     res.render('../views/updateuser', { userData })
 }
 
@@ -32,8 +31,9 @@ const update = (req, res) => {
     const id = req.params.id;
     itemsDB.findByIdAndUpdate(id, req.body).
         then(userData => {
-            //res.send(data);
-            res.render('../views/updateuser', { userData })
+            if(userData){
+                res.redirect('/items')
+            }
         });
 }
 
