@@ -3,13 +3,18 @@ import { Link } from "react-router-dom";
 
 
 const Sidebar = () => {
+    let dyanmicStyle = {
+        backgroundColor: "red",
+        width: "100%",
+        textAlign: "center"
+    }
     return (
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <div class="text-center sidebar-brand-wrapper d-flex align-items-center">
                 {/* <a class="sidebar-brand brand-logo" href="index.html"><img src={process.env.PUBLIC_URL + '/images/logo.svg'} alt="logo" /></a> */}
-                <a class="sidebar-brand brand-logo-mini pl-4 pt-3" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
-                 {/* <Link to='/' className='sidebar-brand brand-logo'><img src={process.env.PUBLIC_URL + '/images/logo.svg'} alt="logo" /></Link>    */}
-                 {/* <Link to="/expenses">Expenses</Link> */}
+                {/* <a class="sidebar-brand brand-logo-mini pl-4 pt-3" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a> */}
+                <Link style={dyanmicStyle} to='/' className='sidebar-brand brand-logo'><img src={process.env.PUBLIC_URL + '/images/logo.svg'} alt="logo" /></Link>
+                {/* <Link to="/">Dashboard</Link> */}
 
             </div>
             <ul class="nav">
@@ -28,36 +33,36 @@ const Sidebar = () => {
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">
+                    <Link to="/" className='nav-link'>
                         <i class="mdi mdi-home menu-icon"></i>
                         <span class="menu-title">Dashboard</span>
-                    </a>
+                    </Link>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                    <Link to="/uielement" className='nav-link'>
                         <i class="mdi mdi-crosshairs-gps menu-icon"></i>
                         <span class="menu-title">Basic UI Elements</span>
                         <i class="menu-arrow"></i>
-                    </a>
-                    <div class="collapse" id="ui-basic">
+                    </Link>
+                    <div class="" id="ui-basic">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item">
-                                <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a>
+                                <Link to="/buttons" className='nav-link'>Buttons</Link>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a>
+                                <Link to="/dropdown" className='nav-link'>Dropdowns</Link>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="pages/ui-features/typography.html">Typography</a>
+                                <Link to="/typography" className='nav-link'>Typography</Link>
                             </li>
                         </ul>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="pages/icons/mdi.html">
+                    <Link to="/icons" className='nav-link'>
                         <i class="mdi mdi-contacts menu-icon"></i>
                         <span class="menu-title">Icons</span>
-                    </a>
+                    </Link>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="pages/forms/basic_elements.html">
