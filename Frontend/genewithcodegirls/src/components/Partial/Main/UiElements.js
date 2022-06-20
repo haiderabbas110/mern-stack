@@ -1,12 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from "react";
 
-const UiElements = () => {
+const UiElements = (props) => {
     const [products, getProduct] = useState()
     const getProductData = () => {
-        axios.get('http://localhost:8080/items')
+        axios.get('http://localhost:8080/item')
             .then(function (response) {
                 // handle success
+                console.log(response + "  asdsafd")
                 getProduct(response.data);
             })
             .catch(function (error) {
@@ -20,25 +21,28 @@ const UiElements = () => {
 
     useEffect(() => {
         getProductData();
+        
     }, []);
     return (
         <>
             <h1>UiElements</h1>
+            <button onClick={props.data}>click me</button>
             <table>
-            {products && products.map((data, key) => {
-                return (
-                    <>
-                        
-                            <tr key={key}>
-                                <td>Name: {data.name}</td>
-                                <td>Brand: {data.brand}</td>
-                                <td>Color: {data.color}</td>
-                            </tr>
-                        
+                {products && products.map((data, key) => {
+                    return (
+                        <>
+                            <tbody>
+                                <tr key={key}>
+                                    <td>Name: {data.name}</td>
+                                    <td>Brand: {data.brand}</td>
+                                    <td>Color: {data.color}</td>
+                                    
+                                </tr>
+                            </tbody>
 
-                    </>
-                )
-            })}
+                        </>
+                    )
+                })}
             </table>
 
         </>

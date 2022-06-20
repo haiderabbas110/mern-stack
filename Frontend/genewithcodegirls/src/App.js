@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   BrowserRouter,
   Route,
@@ -12,6 +13,14 @@ import UIElement from './components/Partial/Main/UiElements';
 import ButtonPage from './components/Partial/Main/ButtonPage';
 // import smooking from './components/Partial/Main/color';
 const App = () => {
+  
+   const handleDelete  = () => {
+    
+    const userID = false
+    let isLoggedIn = userID === true ? "User is logged in" : "User is logged out";
+    alert(isLoggedIn)
+    return isLoggedIn;
+  }
   return (
     <div className="App">
       <BrowserRouter>
@@ -21,7 +30,7 @@ const App = () => {
             <Route path="/" element={<Dashboard />} />
             <Route path="/forms" element={<Forms />} />
             <Route path="/icons" element={<Icons colors="red" />} />
-            <Route path="/uielement" element={<UIElement />} />
+            <Route path="/uielement" element={<UIElement data={handleDelete} />}  />
             <Route path="/buttons" element={<ButtonPage />} />
           </Route>
         </Routes>
