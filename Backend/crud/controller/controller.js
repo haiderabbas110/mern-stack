@@ -38,6 +38,7 @@ const update = (req, res) => {
 }
 
 const homeView = (req, res) => {
+    console.log("Asdfasf");
     // itemsDB.find({name:{$eq:"haider"}}).
     itemsDB.find().
         then(userData => {

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 const UiElements = (props) => {
     const [products, getProduct] = useState()
     const getProductData = () => {
-        axios.get('http://localhost:8080/item')
+        axios.get('http://localhost:8080/items/')
             .then(function (response) {
                 // handle success
                 console.log(response + "  asdsafd")

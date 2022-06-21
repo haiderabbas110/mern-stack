@@ -65,10 +65,11 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="pages/forms/basic_elements.html">
+                    <Link to="/forms" className='nav-link'>
                         <i class="mdi mdi-format-list-bulleted menu-icon"></i>
                         <span class="menu-title">Forms</span>
-                    </a>
+                    </Link>
+
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="pages/charts/chartjs.html">

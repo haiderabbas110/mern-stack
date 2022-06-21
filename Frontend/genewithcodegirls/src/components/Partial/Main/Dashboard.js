@@ -1,24 +1,48 @@
-// import { Link } from "react-router-dom";
-import React from "react";
+import axios from 'axios';
+import React, { useEffect, useState } from "react";
 
 const Dashboard = () => {
-    function handleSubmit(e) {
-        e.preventDefault();
-        console.log('You clicked submit.');
+    const [products, getProduct] = useState()
+    const getProductData = () => {
+        axios.get('http://localhost:8080/items/')
+            .then(function (response) {
+                // handle success
+                console.log(response + "  asdsafd")
+                getProduct(response.data);
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+            .then(function () {
+                // always executed
+            })
     }
-    const numbers = [1, 2, 3, 4, 5];
-    const listItems = numbers.map((number) =>
-        <li>{number}</li>
-    );
+
+    useEffect(() => {
+        getProductData();
+
+    }, []);
     return (
         <>
             <h1>Dashboard</h1>
-            <ul>
-                {listItems}
-            </ul>
-            <form onSubmit={handleSubmit}>
-                <button type="submit">Submit</button>
-            </form>
+            <table>
+                {products && products.map((data, key) => {
+                    return (
+                        <>
+                            <tbody>
+                                <tr key={key}>
+                                    <td>Name: {data.name}</td>
+                                    <td>Brand: {data.brand}</td>
+                                    <td>Color: {data.color}</td>
+
+                                </tr>
+                            </tbody>
+
+                        </>
+                    )
+                })}
+            </table>
         </>
 
 
