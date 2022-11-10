@@ -11,6 +11,7 @@
 - Reduce
 - Polyfill
 - For in V/S ForEach
+- Different Between ES5 vs ES6 - https://medium.com/recraftrelic/es5-vs-es6-with-example-code-9901fa0136fc
 */
 
 
