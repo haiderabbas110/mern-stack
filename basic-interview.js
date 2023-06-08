@@ -15,6 +15,27 @@
 */
 
 
+/*
+  ============================
+  How EVENT LOOP Work
+  ============================
+*/
+
+/* console.log("start")
+setTimeout(() => {
+    console.log("Timeout");
+})
+Promise.resolve('Promise').then( (res) => console.log(res))
+console.log("end")
+*/
+//OUTPUT
+/* 
+  start
+  end
+  Promise
+  Timeout
+*/
+
 
 /*
   =================================== 
