@@ -36,7 +36,30 @@ console.log("end")
   Timeout
 */
 
+/*
+  =================================== 
+  Closure - ARROW SHORT HAND FUNCTION 
+  =================================== 
+*/
 
+/* let abc = (a) => xyz = (b) => a+b;
+
+console.log(abc(2)(3)) */
+
+/*
+  =================================== 
+  Closure - ARROW SHORT LONG FUNCTION 
+  =================================== 
+*/
+
+/*
+let abc = (a) => {
+    return xyz = (b) => {
+        return a + b  
+    }
+}
+console.log(abc(3)(3))
+*/
 /*
   =================================== 
   Closure - FUNCTIONS INSIDE FUNCTION 
