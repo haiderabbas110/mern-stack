@@ -20,8 +20,8 @@ const booklist = (req, res) => {
     // res.render('../views/booklist.ejs')
 
     booksDB.find().
-    then(id => {
-        res.render('../views/booklist.ejs', { id })
+    then(books => {
+        res.render('../views/booklist.ejs', { books })
         // res.send(userData);
     });
 }
@@ -50,6 +50,20 @@ const create = (req, res) => {
     });
 }
 
+
+const createBook = (req, res) => {
+    const item = new booksDB({
+        name: req.body.name,
+        author: req.body.author,
+        published: req.body.published
+    })
+    item.save(item).then(data => {
+        //res.send(data)
+        res.redirect('/books');
+    });
+}
+
+
 const update = (req, res) => {
     const id = req.params.id;
     itemsDB.findByIdAndUpdate(id, req.body).
@@ -69,4 +83,4 @@ const homeView = (req, res) => {
         });
 }
 
-export { create, update, createView, homeView, updateView, bookView, booklist }
+export { create, update, createView, homeView, updateView, bookView, booklist, createBook }
