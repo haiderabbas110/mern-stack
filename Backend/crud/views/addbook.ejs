@@ -1,0 +1,32 @@
+<%- include('include/header'); %>
+  <h1>Add Book</h1>
+    <form action="/items/addbook" method="POST">
+        <div>
+            <label for="">Add User</label>
+            <select name="users" id="">
+                <% users.map(user => { %>
+                <option value="<%= user._id %>">
+                    <%= user.name %>
+               </option>
+               <% }) %>
+            </select>
+        </div>
+        <div>
+            <label for="">Name</label>
+            <input type="text" name="name" placeholder="Enter your name">
+        </div>
+        <div>
+            <label for="">Author</label>
+            <input type="text" name="Author" placeholder="Enter your author">
+        </div>
+        <div>
+            <label for="">Publish Date</label>
+            <input type="date" name="publishdate" placeholder="Enter your date">
+        </div>
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+
+</body>
+</html>

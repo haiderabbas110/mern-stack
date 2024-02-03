@@ -1,9 +1,15 @@
 import express from 'express'
-import { create, update, createView, homeView, updateView } from '../controller/controller.js'
+import { create, update, createView, homeView, updateView, booklist, bookView } from '../controller/controller.js'
 const router = express.Router();
 
 //Home route
 router.get('/', homeView);
+
+//Book route
+router.get('/books', booklist);
+
+//Book route
+router.get('/addbook', bookView);
 
 // Add view route
 router.get('/add', createView);

@@ -5,8 +5,8 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th>Email</th>
-                <th>Phone</th>
+                <th>Author</th>
+                <th>Publish Date</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -20,10 +20,10 @@
                         <%= user.name %>
                     </td>
                     <td>
-                        <%= user.email %>
+                        <%= user.author %>
                     </td>
                     <td>
-                        <%= user.phone %>
+                        <%= user.publishdate %>
                     </td>
                     <td>
                         <a href="http://localhost:8080/items/update/<%=user._id%>" class="edit"

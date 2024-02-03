@@ -1,10 +1,33 @@
 import { itemsDB } from '../model/items.js'
+import {  booksDB } from '../model/books.js'
 import mongoose from "mongoose";
 
 /*================== Render Route Views ========================*/
 const createView = (req, res) => {
     res.render('../views/adduser.ejs')
 }
+
+const bookView = (req, res) => {
+    itemsDB.find().
+    then(users => {
+        console.log(users)
+        res.render('../views/addbook.ejs', { users })
+    });
+    
+}
+
+const booklist = (req, res) => {
+    // res.render('../views/booklist.ejs')
+
+    booksDB.find().
+    then(id => {
+        res.render('../views/booklist.ejs', { id })
+        // res.send(userData);
+    });
+}
+
+
+
 const updateView = async (req, res) => {
     const userData = await itemsDB.findOne({
         _id: mongoose.Types.ObjectId(req.params.id
@@ -17,9 +40,9 @@ const updateView = async (req, res) => {
 /*================== Route API For Crud Opr  ========================*/
 const create = (req, res) => {
     const item = new itemsDB({
-        name: req.body.item,
-        color: req.body.color,
-        brand: req.body.brand
+        name: req.body.name,
+        email: req.body.email,
+        phone: req.body.phone
     })
     item.save(item).then(data => {
         //res.send(data)
@@ -38,13 +61,12 @@ const update = (req, res) => {
 }
 
 const homeView = (req, res) => {
-    console.log("Asdfasf");
     // itemsDB.find({name:{$eq:"haider"}}).
     itemsDB.find().
         then(userData => {
-            //res.render('index', { userData })
-            res.send(userData);
+            res.render('index', { userData })
+            // res.send(userData);
         });
 }
 
-export { create, update, createView, homeView, updateView }
+export { create, update, createView, homeView, updateView, bookView, booklist }

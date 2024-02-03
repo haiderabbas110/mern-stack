@@ -4,15 +4,15 @@ const itemSchema = new mongoose.Schema({
     name: {
         type: String
     },
-    email: {
+    author: {
         type: String
     },
-    phone: {
+    published: {
         type: String
     }
 });
 
 // The alternative to the export model pattern is the export schema pattern.
-const itemsDB = mongoose.model('users', itemSchema);
+const booksDB = mongoose.model('books', itemSchema);
 
-export { itemsDB }
+export { booksDB }
