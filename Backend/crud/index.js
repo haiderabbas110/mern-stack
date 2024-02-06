@@ -12,7 +12,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
 const port = process.env.API_PORT;
-app.use(cors());
+// app.use(cors());
 app.use(bodyParser.urlencoded({extended:false}));
 
 app.use('/items', router);

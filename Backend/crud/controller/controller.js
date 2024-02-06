@@ -59,7 +59,7 @@ const createBook = (req, res) => {
     })
     item.save(item).then(data => {
         //res.send(data)
-        res.redirect('/books');
+        res.redirect('/items/books');
     });
 }
 
