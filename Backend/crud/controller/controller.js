@@ -1,5 +1,5 @@
 import { itemsDB } from '../model/items.js'
-import {  booksDB } from '../model/books.js'
+import { booksDB } from '../model/books.js'
 import mongoose from "mongoose";
 
 /*================== Render Route Views ========================*/
@@ -9,20 +9,30 @@ const createView = (req, res) => {
 
 const bookView = (req, res) => {
     itemsDB.find().
-    then(users => {
-        console.log(users)
-        res.render('../views/addbook.ejs', { users })
-    });
-    
+        then(users => {
+            console.log(users)
+            res.render('../views/addbook.ejs', { users })
+        });
+
 }
 
 const booklist = (req, res) => {
     // res.render('../views/booklist.ejs')
 
-    booksDB.find().
-    then(books => {
-        res.render('../views/booklist.ejs', { books })
-        // res.send(userData);
+    // booksDB.find().
+    // then(books => {
+    //     res.render('../views/booklist.ejs', { books })
+    //     // res.send(userData);
+    // });
+
+    booksDB.find().populate('users').exec((err, books) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+
+        res.render('../views/booklist.ejs', { books });
     });
 }
 
@@ -53,6 +63,7 @@ const create = (req, res) => {
 
 const createBook = (req, res) => {
     const item = new booksDB({
+        users: req.body.users,
         name: req.body.name,
         author: req.body.author,
         published: req.body.published
@@ -68,7 +79,7 @@ const update = (req, res) => {
     const id = req.params.id;
     itemsDB.findByIdAndUpdate(id, req.body).
         then(userData => {
-            if(userData){
+            if (userData) {
                 res.redirect('/items')
             }
         });

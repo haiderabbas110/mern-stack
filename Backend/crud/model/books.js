@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+const { Schema } = mongoose;
 
 const itemSchema = new mongoose.Schema({
     name: {
@@ -9,7 +10,9 @@ const itemSchema = new mongoose.Schema({
     },
     published: {
         type: String
-    }
+    },
+    users: [{ type: Schema.Types.ObjectId, ref: 'users' }]
+
 });
 
 // The alternative to the export model pattern is the export schema pattern.

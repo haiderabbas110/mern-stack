@@ -8,7 +8,7 @@ const port = 8000
 app.use(cookieSession({
     name: 'my-session',
     keys: ['ss'],
-    maxAge:5000
+    maxAge:24 * 60 * 60 * 1000
 
 }));
 // app.use(cookieParser());
@@ -19,7 +19,7 @@ app.get('/data/session', (req, res) => {
     // sessionStorage.setItem('setBirthday', Date());
     // req.session.views = (req.session.views || 0) + 1
 
-  req.session.ali = ( req.session.ali || 0 ) + 1 
+    req.session.ali = ( req.session.ali || 0 ) + 1 
 //   console.log(pageViews);
     res.send(req.session.ali + ' views')
 

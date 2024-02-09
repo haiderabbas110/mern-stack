@@ -7,28 +7,36 @@
                 <th>Name</th>
                 <th>Author</th>
                 <th>Publish Date</th>
+                <th>User</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            <% for(let user of books){ %>
+            <% for(let book of books){ %>
                 <tr>
                     <td>
-                        <%= user._id%>
+                        <%= book._id%>
                     </td>
                     <td>
-                        <%= user.name %>
+                        <%= book.name %>
                     </td>
                     <td>
-                        <%= user.author %>
+                        <%= book.author %>
                     </td>
                     <td>
-                        <%= user.published %>
+                        <%= book.published %>
+                    </td>
+
+                    <td>
+                        <% for(let user of book.users){ %>
+                            <%= user.name %>
+
+                        <% } %>
                     </td>
                     <td>
-                        <a href="http://localhost:8080/items/update/<%=user._id%>" class="edit"
+                        <a href="http://localhost:8080/items/update/<%=book._id%>" class="edit"
                             data-toggle="modal">Edit</a>
-                        <a href="http://localhost:8080/delete/<%=user._id%>" class="delete">Delete</i></a>
+                        <a href="http://localhost:8080/delete/<%=book._id%>" class="delete">Delete</i></a>
                     </td>
                 </tr>
                 <% } %>
