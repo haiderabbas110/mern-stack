@@ -5,7 +5,7 @@ if (process.env.NODE_ENV !== 'production') {
     dotenv.config()
 }
 
-// https://www.youtube.com/watch?v=-RCnNyD0L-s
+
 import express from 'express';
 import bcrypt from 'bcrypt';
 import passport from 'passport';
@@ -37,13 +37,14 @@ app.use(passport.session())
 
 app.get('/', checkAuthenticated, function (req, res) {
 
+    console.log(req.user.name)
     res.render('index', { name: req.user.name });
 
 });
 
 app.get('/user-downloads', checkAuthenticated, function (req, res) {
 
-    res.render('download', { data: 'book1',name:req.body.name });
+    res.render('download', { data: 'book1',name:req.user.name });
 
 });
 const users = [];

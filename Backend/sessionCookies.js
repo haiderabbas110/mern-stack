@@ -25,6 +25,15 @@ app.get('/data/session', (req, res) => {
 
 });
 
+app.get('/data/areyouexist', (req, res) => {
+    
+    res.send(req.session.ali + ' views')
+
+});
+
+
+
+
 
 app.listen(port, function () {
     console.log(`${port} -> This port has been start`);
