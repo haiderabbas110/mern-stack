@@ -1,25 +1,23 @@
-import { useEffect, useState } from "react"
-
-let UserFetch = ({ userID }) => {
-    let [userList, setUserList] = useState();
-
-    let list = () => {
-        fetch(`https://jsonplaceholder.typicode.com/todos/${userID}`)
-            .then(response => response.json())
-            .then(json => setUserList(json))
-
-    }
-
-    useEffect(() => {
-        list()
-    })
-
-
+import Uselelo from '../hook/useLelo'
+let UserFetch = () => {
+    const userList = Uselelo(`https://jsonplaceholder.typicode.com/todos/`)
+    const oneuser = Uselelo(`https://jsonplaceholder.typicode.com/todos/1`)
 
     return (
-        <div>
-            {userList && userList.title}
-        </div>
+
+        <>
+            {oneuser && oneuser.title}
+            <ul>
+                {
+                    userList && userList.map((user, id) => {
+                        return (
+                            <li key={id}>{user.title}</li>
+                        )
+
+                    })
+                }
+            </ul>
+        </>
     )
 }
 

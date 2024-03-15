@@ -15,6 +15,18 @@ const menubar = [
         name: "Portfolio",
         link: "/portofolio",
     },
+    {
+        name: "Login",
+        link: "/login",
+    },
+    {
+        name: "Users",
+        link: "/users",
+    },
+    {
+        name: "User",
+        link: "/users/user1",
+    },
 ]
 let Header = () => {
     return (
