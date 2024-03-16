@@ -1,0 +1,31 @@
+- Take input of 2 variables (from browser or terminal) and show the total in console.
+
+- Write code to sum an array containing numbers
+
+- Write code to find maximum value from an array containing numbers (first using for loop and then using reduce)
+
+- Write code to find minimum value from an array containing numbers (first using for loop and then using reduce)
+
+- Convert to Fahrenheit. The algorithm to convert from Celsius to Fahrenheit is the temperature in Celsius times 9/5, plus 32. Also write Fahrenheit to Celsius conversion.
+
+- Write code that guesses a number thought up by the user where after each guess the user indicates whether the guess is <=> than the “thought” number.
+
+- Create a function which takes a string parameter and returns the largest word in the string. If there are two or more words that fit the bill, return the first word.
+
+- Write a function which takes a string parameter and returns the string in reverse.
+
+- Write a function that tell will ask number 0 or 1 if user type 0 it should 1 and if user type 0 so it should show 1 but do not user conditional logic
+
+- Find the Longest Word in a String: Write a function that takes a sentence as an argument and returns the longest word in it
+
+- Count Vowels in a String: Write a function that takes a string as an argument and returns the number of vowels (a, e, i, o, u) in the string.
+
+- Check for Prime Number: Write a function that takes a number as an argument and returns true if the number is prime and false otherwise.
+
+- Reverse a String: Write a function that takes a string as an argument and returns the reverse of that string.
+
+- Check if a Number is Even or Odd: Write a function that takes a number as an argument and returns "even" if the number is even and "odd" if it's odd.
+
+- Find the Maximum Number: Write a function that takes an array of numbers as an argument and returns the largest number in the array.
+
+- Reverse a String: Write a function that takes a string as an argument and returns the reverse of that string.
