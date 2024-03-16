@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom'
+
 const menubar = [
     {
         name: "Home",
@@ -27,16 +29,22 @@ const menubar = [
         name: "User",
         link: "/users/user1",
     },
+    {
+        name: "Use Memnu",
+        link: "/usememo",
+    },
 ]
 let Header = () => {
     return (
         <header>
             <ul>
                 {
+                   
                     menubar.map((item, index) => {
                         return (
                             <li key={index}>
-                                <a href={item.link}>{item.name}</a>
+                                {/* <a href={item.link}>{item.name}</a> */}
+                                <NavLink to={item.link} >{item.name}</NavLink>
                             </li>
                         )
                     })

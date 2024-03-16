@@ -10,6 +10,7 @@ import { useState } from 'react';
 import UserFetch from './components/UserFetch';
 import Home from './pages/Home';
 import About from './pages/About';
+import Memouse from "./components/Memouse";
 
 const list = [
   {
@@ -53,25 +54,26 @@ function App() {
   }
   return (
     <>
-      <Header />
+
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/users" element={<Users users={user} />} />
           <Route path="/users/user1" element={<User1 />} />
+          <Route path="/usememo" element={<Memouse />} />
         </Routes>
-
       </BrowserRouter>
 
 
 
       {/* <Users users={user} handDelete={deletion} /> */}
-      <Mybutton label="Click Here" buttonCLick={submit} />
+      {/* <Mybutton label="Click Here" buttonCLick={submit} />
       <Mybutton label="Click Here" buttonCLick={mysubmit} />
       <Counter />
-      <UserFetch />
+      <UserFetch /> */}
 
 
 
