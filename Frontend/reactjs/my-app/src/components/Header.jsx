@@ -33,6 +33,18 @@ const menubar = [
         name: "Use Memnu",
         link: "/usememo",
     },
+    {
+        name: "Params Box",
+        link: "/parambox",
+    },
+    {
+        name: "Data Fetch",
+        link: "/reuse-hook",
+    },
+    {
+        name: "Form Contact",
+        link: "/form",
+    },
 ]
 let Header = () => {
     return (

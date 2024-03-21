@@ -3,14 +3,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import Header from './components/Header';
 import Login from './pages/Login';
-import Mybutton from './components/Mybutton';
-import Counter from './components/counter';
 import Users from './components/User';
 import { useState } from 'react';
-import UserFetch from './components/UserFetch';
 import Home from './pages/Home';
 import About from './pages/About';
 import Memouse from "./components/Memouse";
+import ParamBox from "./components/ParamBox"
+import DataFetch from "./components/DataFetch"
+import Form from "./components/Form"
+
 
 const list = [
   {
@@ -64,6 +65,11 @@ function App() {
           <Route path="/users" element={<Users users={user} />} />
           <Route path="/users/user1" element={<User1 />} />
           <Route path="/usememo" element={<Memouse />} />
+          
+          <Route path="/reuse-hook" element={<DataFetch />} />
+          <Route path="/parambox/:id" element={<ParamBox />} />
+          <Route path="/form" element={<Form />} />
+
         </Routes>
       </BrowserRouter>
 
