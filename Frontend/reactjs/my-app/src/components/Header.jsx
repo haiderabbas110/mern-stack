@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 const menubar = [
     {
@@ -44,6 +44,8 @@ const menubar = [
     {
         name: "Form Contact",
         link: "/form",
+        name: "Use Effect",
+        link: "/useeffect",
     },
 ]
 let Header = () => {
@@ -56,7 +58,7 @@ let Header = () => {
                         return (
                             <li key={index}>
                                 {/* <a href={item.link}>{item.name}</a> */}
-                                <NavLink to={item.link} >{item.name}</NavLink>
+                                <Link to={item.link} >{item.name}</Link>
                             </li>
                         )
                     })

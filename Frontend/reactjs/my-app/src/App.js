@@ -12,6 +12,7 @@ import ParamBox from "./components/ParamBox"
 import DataFetch from "./components/DataFetch"
 import Form from "./components/Form"
 
+import EffectUseCleanup from "./components/EffectUseCleanup";
 
 const list = [
   {
@@ -55,7 +56,7 @@ function App() {
   }
   return (
     <>
-
+ 
       <BrowserRouter>
         <Header />
         <Routes>
@@ -70,6 +71,7 @@ function App() {
           <Route path="/parambox/:id" element={<ParamBox />} />
           <Route path="/form" element={<Form />} />
 
+          <Route path="/useeffect" element={<EffectUseCleanup />} />
         </Routes>
       </BrowserRouter>
 
