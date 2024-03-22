@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import Header from './components/Header';
 import Login from './pages/Login';
+import Main from './pages/Main'
 import Users from './components/User';
 import { useState } from 'react';
 import Home from './pages/Home';
@@ -60,18 +61,20 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/users" element={<Users users={user} />} />
-          <Route path="/users/user1" element={<User1 />} />
-          <Route path="/usememo" element={<Memouse />} />
-          
-          <Route path="/reuse-hook" element={<DataFetch />} />
-          <Route path="/parambox/:id" element={<ParamBox />} />
-          <Route path="/form" element={<Form />} />
+          <Route element={<Main />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/users" element={<Users users={user} />} />
+            <Route path="/users/user1" element={<User1 />} />
+            <Route path="/usememo" element={<Memouse />} />
+            
+            <Route path="/reuse-hook" element={<DataFetch />} />
+            <Route path="/parambox/:id" element={<ParamBox />} />
+            <Route path="/form" element={<Form />} />
 
-          <Route path="/useeffect" element={<EffectUseCleanup />} />
+            <Route path="/useeffect" element={<EffectUseCleanup />} />
+          </Route>
         </Routes>
       </BrowserRouter>
 
