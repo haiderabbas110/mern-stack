@@ -1,10 +1,9 @@
-const express = require('express');
-const bodyParser = require('body-parser'); // parse incomming request
-const cors = require('cors'); // http decode
+import express from 'express'
+import bodyParser from 'body-parser' // parse incomming requ
+import cors from 'cors'
 const app = express();
-const port = 3000;
-const fs = require('fs');
-const { json } = require('body-parser');
+const port = 8000;
+import fs from 'fs'
 
 //Configure body parser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -33,7 +32,6 @@ app.post('/register', (req, res) => {
     ] */
 
     let data = JSON.stringify(body);
-    console.log(data);
     fs.writeFile("data.json",data,(err) => {
 
         //Error checking.

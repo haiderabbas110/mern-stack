@@ -42,10 +42,14 @@ const menubar = [
         link: "/reuse-hook",
     },
     {
-        name: "Form Contact",
-        link: "/form",
         name: "Use Effect",
         link: "/useeffect",
+    },
+
+    {
+        name: "Form Contact",
+        link: "/form",
+
     },
 ]
 let Header = () => {
@@ -53,7 +57,7 @@ let Header = () => {
         <header>
             <ul>
                 {
-                   
+
                     menubar.map((item, index) => {
                         return (
                             <li key={index}>
