@@ -9,6 +9,7 @@ let EffectUseCleanup = () => {
 
    let chaltyraho = setInterval(() => {
       console.log("chalty raho")
+      
     }, 3000);
 
     return () => {
@@ -20,7 +21,7 @@ let EffectUseCleanup = () => {
   let Child = () => {
     return(
       <>
-        <h1>Child Compo</h1>
+        <h1>Child Compo {}</h1>
       </>
     )
   }
@@ -29,14 +30,6 @@ let EffectUseCleanup = () => {
     <>
       <h1>Use effect with use cleanup</h1>
       <ul>
-        {
-          // data && data.map((item,i)=>{
-          //   return (
-          //     <li key={i}>{item.title}</li>
-          //   )
-          // })
-        }
-
         <button onClick={() => setToggle(!toggle)}>toggle</button>
         {!toggle && <Child />}
       </ul>

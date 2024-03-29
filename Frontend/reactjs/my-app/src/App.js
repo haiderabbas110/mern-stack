@@ -12,6 +12,8 @@ import Memouse from "./components/Memouse";
 import ParamBox from "./components/ParamBox"
 import DataFetch from "./components/DataFetch"
 import Form from "./components/Form"
+import MemouseExp from "./components/Memouse-exp"
+
 
 import EffectUseCleanup from "./components/EffectUseCleanup";
 
@@ -74,6 +76,8 @@ function App() {
             <Route path="/form" element={<Form />} />
 
             <Route path="/useeffect" element={<EffectUseCleanup />} />
+
+            <Route path="/usememoexp" element={<MemouseExp />} />
           </Route>
         </Routes>
       </BrowserRouter>
