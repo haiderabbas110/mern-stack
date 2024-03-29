@@ -1,12 +1,15 @@
 import { useState } from "react"
 
 let Form = () => {
+    const [error, setError] = useState("");
     const [formData, setFormData] = useState({
         firstname: '',
         lastname: '',
+        passwrod:''
     });
 
     const handleChange = (e) => {
+       
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
       };
@@ -20,10 +23,14 @@ let Form = () => {
             },
             body: JSON.stringify(formData)
         };
+
+
         fetch('http://localhost:8000/register', options)
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    const err = 'Network response was not ok';
+                    setError(err)
+                    throw new Error(err);
                 }
                 return response.json();
             })
@@ -33,18 +40,19 @@ let Form = () => {
     }
 
     return (
-        <form action="" method="POST">
+        <form action="">
             <label>
-                ID:
+                First Name:
                 <input type="text" name="firstname" value={formData.firstname} onChange={handleChange} />
             </label>
             <br />
             <label>
-                Name:
+                Last Name:
                 <input type="text" name="lastname" value={formData.lastname} onChange={handleChange} />
             </label>
             <br />
-            <button onClick={formHandler} type="submit">Submit</button>
+            <button onClick={formHandler}>Submit</button>
+            <span>{ error && error}</span>
         </form>
     )
 }
