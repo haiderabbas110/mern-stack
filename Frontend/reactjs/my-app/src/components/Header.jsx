@@ -31,7 +31,7 @@ const menubar = [
     },
     {
         name: "Use Memnu",
-        link: "/usememo",
+        link: "/usememoexp",
     },
     {
         name: "Params Box",

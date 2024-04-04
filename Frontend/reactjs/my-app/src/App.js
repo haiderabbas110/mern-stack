@@ -70,13 +70,10 @@ function App() {
             <Route path="/users" element={<Users users={user} />} />
             <Route path="/users/user1" element={<User1 />} />
             <Route path="/usememo" element={<Memouse />} />
-
             <Route path="/reuse-hook" element={<DataFetch />} />
             <Route path="/parambox/:id" element={<ParamBox />} />
             <Route path="/form" element={<Form />} />
-
             <Route path="/useeffect" element={<EffectUseCleanup />} />
-
             <Route path="/usememoexp" element={<MemouseExp />} />
             <Route path="/*" element={<ErrorPage />} />
           </Route>
