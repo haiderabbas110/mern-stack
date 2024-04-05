@@ -8,7 +8,7 @@ let Callbackuse  = () => {
     }
     let handleClick2 = () => {
         setCount(count + 1);
-    }dl
+    }
     return (
         
         <>

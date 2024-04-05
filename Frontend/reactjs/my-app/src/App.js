@@ -14,6 +14,7 @@ import DataFetch from "./components/DataFetch"
 import Form from "./components/Form"
 import MemouseExp from "./components/Memouse-exp"
 import ErrorPage from "./components/ErrorPage";
+import Callbackuse from "./components/Callbackuse";
 
 import EffectUseCleanup from "./components/EffectUseCleanup";
 
@@ -75,6 +76,7 @@ function App() {
             <Route path="/form" element={<Form />} />
             <Route path="/useeffect" element={<EffectUseCleanup />} />
             <Route path="/usememoexp" element={<MemouseExp />} />
+            <Route path="/usecallback" element={<Callbackuse />} />
             <Route path="/*" element={<ErrorPage />} />
           </Route>
 
