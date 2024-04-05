@@ -1,23 +1,24 @@
-import {auth} from '../config/fb-conf';
+import {auth} from '../../config/fb-conf';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from 'react';
-let Login = () =>{
+let Register = () =>{
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
 
-    const signIn = async () =>{
+    const register = async () =>{
         await createUserWithEmailAndPassword(auth,email,password);
     }
     return (
         <>
             <div>
+                <h1>Register User</h1>
                 <input type="text" placeholder="Email" onChange={(e)=> setEmail(e.target.value)} />
                 <input type="text" placeholder="Password" onChange={(e)=> setPassword(e.target.value)} />
-                <button onClick={signIn}>Login</button>
+                <button onClick={register}>Register</button>
                 
             </div>
         </>
     )
 }
 
-export default Login;
+export default Register;
