@@ -31,7 +31,7 @@ const menubar = [
     },
     {
         name: "Use Memnu",
-        link: "/usememo",
+        link: "/usememoexp",
     },
     {
         name: "Params Box",
@@ -51,6 +51,10 @@ const menubar = [
         link: "/form",
 
     },
+    {
+        name:"Use Callback",
+        link:"/usecallback"
+    }
 ]
 let Header = () => {
     return (
