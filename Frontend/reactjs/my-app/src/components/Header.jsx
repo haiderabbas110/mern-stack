@@ -18,6 +18,10 @@ const menubar = [
         link: "/portofolio",
     },
     {
+        name: "Register",
+        link: "/register",
+    },
+    {
         name: "Login",
         link: "/login",
     },

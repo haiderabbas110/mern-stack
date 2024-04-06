@@ -2,8 +2,10 @@ import * as React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import Header from './components/Header';
-import Login from './pages/Login';
-import Main from './components/Main'
+import RegisterForm from './pages/Register';
+import LoginForm from './pages/Login';
+import DashbaordPage from './pages/Dashboard';
+import Main from './pages/Main'
 import Users from './components/User';
 import { useState } from 'react';
 import Home from './pages/Home';
@@ -67,7 +69,9 @@ function App() {
           <Route element={<Main />}>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<RegisterForm />} />
+            <Route path="/login" element={<LoginForm />} />
+            <Route path="/dashboard" element={<DashbaordPage />} />
             <Route path="/users" element={<Users users={user} />} />
             <Route path="/users/user1" element={<User1 />} />
             <Route path="/usememo" element={<Memouse />} />

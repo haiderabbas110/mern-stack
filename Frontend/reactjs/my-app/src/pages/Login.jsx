@@ -1,7 +1,7 @@
-import Loginform from '../components/Login'
-let Login  = () =>{
+import Login from '../components/FirebaseAuth/Login'
+let LoginForm  = () =>{
     return(
-        <Loginform />
+        <Login />
     )
 }
-export default Login;
+export default LoginForm;
