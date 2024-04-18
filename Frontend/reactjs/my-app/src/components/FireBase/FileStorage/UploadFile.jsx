@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { 
-} from '../../config/fb-conf';
+import { storage } from '../../../config/fb-conf';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 function UploadFile() {
   const [file, setFile] = useState(null);
@@ -13,23 +13,12 @@ function UploadFile() {
 
   const handleUpload = () => {
     if (file) {
-      const uploadTask = storage.ref(`images/${file.name}`).put(file);
-      uploadTask.on(
-        "state_changed",
-        snapshot => {
-          // progress function ...
-        },
-        error => {
-          // error function ...
-          console.log(error);
-        },
-        () => {
-          // complete function
-          storage.ref('images').child(file.name).getDownloadURL().then(url => {
-            console.log(url);
-          });
-        }
-      );
+      const storageRef = ref(storage, `images/${file.name}`);
+      uploadBytes(storageRef, file).then((snapshot) => {
+        getDownloadURL(snapshot.ref).then((downloadURL) => {
+          console.log('File available at', downloadURL);
+        });
+      });
     }
   };
 

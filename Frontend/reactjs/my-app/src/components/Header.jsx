@@ -58,6 +58,10 @@ const menubar = [
     {
         name:"Use Callback",
         link:"/usecallback"
+    },
+    {
+        name:"File Upload",
+        link:"/uploadimage"
     }
 ]
 let Header = () => {

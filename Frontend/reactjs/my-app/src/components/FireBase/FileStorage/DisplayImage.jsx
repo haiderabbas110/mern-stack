@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { storage } from './firebase-config';
+import { storage } from '../../../config/fb-conf';
 
 function DisplayImage() {
   const [url, setUrl] = useState("");
