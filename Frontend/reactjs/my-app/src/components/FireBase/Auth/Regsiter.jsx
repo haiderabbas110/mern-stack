@@ -1,4 +1,4 @@
-import {auth} from '../../config/fb-conf';
+import {auth} from '../../../config/fb-conf';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from 'react';
 let Register = () =>{

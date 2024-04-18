@@ -1,4 +1,4 @@
-import Login from '../components/FirebaseAuth/Login'
+import Login from '../components/FireBase/Auth/Login'
 let LoginForm  = () =>{
     return(
         <Login />

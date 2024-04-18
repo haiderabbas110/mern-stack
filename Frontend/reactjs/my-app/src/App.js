@@ -17,6 +17,7 @@ import Form from "./components/Form"
 import MemouseExp from "./components/Memouse-exp"
 import ErrorPage from "./components/ErrorPage";
 import Callbackuse from "./components/Callbackuse";
+import FileUpload from "./pages/UploadImage";
 
 import EffectUseCleanup from "./components/EffectUseCleanup";
 
@@ -81,6 +82,7 @@ function App() {
             <Route path="/useeffect" element={<EffectUseCleanup />} />
             <Route path="/usememoexp" element={<MemouseExp />} />
             <Route path="/usecallback" element={<Callbackuse />} />
+            <Route path="/uploadimage" element={<FileUpload />} />
             <Route path="/*" element={<ErrorPage />} />
           </Route>
 

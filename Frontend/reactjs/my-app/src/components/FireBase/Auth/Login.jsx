@@ -1,4 +1,4 @@
-import { auth } from '../../config/fb-conf';
+import { auth } from '../../../config/fb-conf';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 import { useState } from 'react';
@@ -7,6 +7,7 @@ let Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
+    const [error, setError] = useState("");
 
 
     const login = async () => {
@@ -22,6 +23,7 @@ let Login = () => {
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
+                setError(errorMessage)
                 console.log(errorCode, errorMessage);
             });
     }
@@ -32,6 +34,7 @@ let Login = () => {
                 <input type="text" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
                 <input type="text" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
                 <button onClick={login}>Login</button>
+                <span>{error && error}</span>
 
             </div>
         </>

@@ -1,4 +1,4 @@
-import Register from '../components/FirebaseAuth/Regsiter'
+import Register from '../components/FireBase/Auth/Regsiter'
 let RegisterForm  = () =>{
     return(
         <Register />

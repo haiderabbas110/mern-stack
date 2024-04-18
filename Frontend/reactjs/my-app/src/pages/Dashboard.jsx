@@ -1,4 +1,4 @@
-import Dashbaord from '../components/FirebaseAuth/Dashbaord'
+import Dashbaord from '../components/FireBase/Auth/Dashbaord'
 let DashbaordPage  = () =>{
     return(
         <Dashbaord />
