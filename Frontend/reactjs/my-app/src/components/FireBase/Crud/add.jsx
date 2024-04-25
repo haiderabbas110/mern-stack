@@ -1,5 +1,5 @@
 import { collection, addDoc } from "firebase/firestore"; 
-import { db } from '../../config/fb-conf';
+import { db } from '../../../config/fb-conf';
 
 let Add = () => {
     let addDataIntoDB = async () => {
@@ -16,6 +16,11 @@ let Add = () => {
 
     }
 
-    addDataIntoDB();
+    return (
+        <>
+            <h1>Add Data</h1>
+            <button onClick={addDataIntoDB}>Add Data</button>
+        </>
+    )
 }
 export default Add
