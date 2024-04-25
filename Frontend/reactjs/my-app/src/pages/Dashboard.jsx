@@ -1,5 +1,5 @@
 import Dashbaord from '../components/FireBase/Auth/Dashbaord'
-import Add from '../components/FireBase/Crud/add'
+import Add from '../components/FireBase/FireStore/Add'
 let DashbaordPage = () => {
 
     return (

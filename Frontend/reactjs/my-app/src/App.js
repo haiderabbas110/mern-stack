@@ -18,6 +18,8 @@ import MemouseExp from "./components/Memouse-exp"
 import ErrorPage from "./components/ErrorPage";
 import Callbackuse from "./components/Callbackuse";
 import FileUpload from "./pages/UploadImage";
+import RealTimeDBAdd from "./components/FireBase/FireBaseRealTimeDB/Crud/Add";
+import RealTimeDBList from "./components/FireBase/FireBaseRealTimeDB/Crud/List";
 
 import EffectUseCleanup from "./components/EffectUseCleanup";
 
@@ -83,6 +85,9 @@ function App() {
             <Route path="/usememoexp" element={<MemouseExp />} />
             <Route path="/usecallback" element={<Callbackuse />} />
             <Route path="/uploadimage" element={<FileUpload />} />
+            <Route path="/FirebaseRealTimeDB" element={<RealTimeDBAdd />} />
+            <Route path="/RealTimeDBList" element={<RealTimeDBList />} />
+            
             <Route path="/*" element={<ErrorPage />} />
           </Route>
 

@@ -62,6 +62,14 @@ const menubar = [
     {
         name:"File Upload",
         link:"/uploadimage"
+    },
+    {
+        name:"FireBase RealTime DB",
+        link:"/FirebaseRealTimeDB"
+    },
+    {
+        name:"FireBase RealTime List",
+        link:"/RealTimeDBList"
     }
 ]
 let Header = () => {
@@ -73,7 +81,6 @@ let Header = () => {
                     menubar.map((item, index) => {
                         return (
                             <li key={index}>
-                                {/* <a href={item.link}>{item.name}</a> */}
                                 <Link to={item.link} >{item.name}</Link>
                             </li>
                         )
