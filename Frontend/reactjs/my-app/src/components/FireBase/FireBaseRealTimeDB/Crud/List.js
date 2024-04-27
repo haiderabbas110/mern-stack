@@ -18,7 +18,7 @@ let List = () => {
         }).catch((error) => {
             console.error(error);
         });
-    }, []);
+    });
 
     let onEdit = (key) => {
         setEditStatus(prev => ({ ...prev, [key]: true }));

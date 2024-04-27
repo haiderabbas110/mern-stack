@@ -70,6 +70,19 @@ const menubar = [
     {
         name:"FireBase RealTime List",
         link:"/RealTimeDBList"
+    },
+    {
+        name:"FireStore Database Add",
+        link:"/FireStoreDatabaseAdd"
+    },
+    {
+        name:"FireStore Database List",
+        link:"/FireStoreDatabaseList"
+    }
+    ,
+    {
+        name:"Cloud Messaging",
+        link:"/CloudMessage"
     }
 ]
 let Header = () => {

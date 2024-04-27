@@ -21,6 +21,11 @@ import FileUpload from "./pages/UploadImage";
 import RealTimeDBAdd from "./components/FireBase/FireBaseRealTimeDB/Crud/Add";
 import RealTimeDBList from "./components/FireBase/FireBaseRealTimeDB/Crud/List";
 
+import FireStoreDatabaseAdd from "./components/FireBase/FireStore/Add";
+import FireStoreDatabaseList from "./components/FireBase/FireStore/List";
+
+import ViewMessage from "./components/FireBase/Cloud-Message/View-Message";
+
 import EffectUseCleanup from "./components/EffectUseCleanup";
 
 const list = [
@@ -87,6 +92,13 @@ function App() {
             <Route path="/uploadimage" element={<FileUpload />} />
             <Route path="/FirebaseRealTimeDB" element={<RealTimeDBAdd />} />
             <Route path="/RealTimeDBList" element={<RealTimeDBList />} />
+            <Route path="/FireStoreDatabaseAdd" element={<FireStoreDatabaseAdd />} />
+            <Route path="/FireStoreDatabaseList" element={<FireStoreDatabaseList />} />
+
+
+            <Route path="/CloudMessage" element={<ViewMessage />} />
+            
+            
             
             <Route path="/*" element={<ErrorPage />} />
           </Route>

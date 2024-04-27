@@ -4,10 +4,6 @@ let DashbaordPage = () => {
 
     return (
         <>
-            <div>
-                <Add />
-            </div>
-
             <Dashbaord />
         </>
     )
