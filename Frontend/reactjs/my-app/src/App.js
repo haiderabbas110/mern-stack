@@ -27,6 +27,9 @@ import FireStoreDatabaseList from "./components/FireBase/FireStore/List";
 import ViewMessage from "./components/FireBase/Cloud-Message/View-Message";
 
 import EffectUseCleanup from "./components/EffectUseCleanup";
+import RefUse from "./components/refUse";
+
+
 
 const list = [
   {
@@ -94,6 +97,8 @@ function App() {
             <Route path="/RealTimeDBList" element={<RealTimeDBList />} />
             <Route path="/FireStoreDatabaseAdd" element={<FireStoreDatabaseAdd />} />
             <Route path="/FireStoreDatabaseList" element={<FireStoreDatabaseList />} />
+            <Route path="/useref" element={< RefUse />} />
+            
 
 
             <Route path="/CloudMessage" element={<ViewMessage />} />

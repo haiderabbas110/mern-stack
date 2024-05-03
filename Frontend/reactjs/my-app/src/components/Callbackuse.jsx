@@ -1,37 +1,24 @@
+import { useCallback } from "react";
 import { useState } from "react"
-
-let Callbackuse  = () => {
+import List from "./List"
+let Callbackuse = () => {
     const [count, setCount] = useState(0);
+    const [list, setList] = useState([]);
 
-    let handleClick1 = () => {
+    let handleClick = () => {
         setCount(count + 1);
     }
-    let handleClick2 = () => {
-        setCount(count + 1);
-    }
+    let addList = useCallback(() => {
+        setList((prev) => [...prev, "New List"])
+    }, [list])
     return (
-        
+
         <>
             <p>Handle Click 1 {count}</p>
-            <button onClick={handleClick1}>Click Me 1</button>
-            <button onClick={handleClick2}>Click Me 2</button>
-
-            <List getItems={count}/>
+            <button onClick={handleClick}>Click Me 1</button>
+            <List list={list} addList={addList} />
         </>
     )
 }
 export default Callbackuse
 
-const List = (list) => {
-    console.log(list)
-    return (
-        <>
-            <h1>List</h1>
-            <ul>
-                <li>lorenma sldfka dfjasldfjklas df</li>
-                <li>lorenma sldfka dfjasldfjklas df</li>
-                <li>lorenma sldfka dfjasldfjklas df</li>
-            </ul>
-        </>
-    )
-}

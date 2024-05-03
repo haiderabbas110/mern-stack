@@ -83,7 +83,17 @@ const menubar = [
     {
         name:"Cloud Messaging",
         link:"/CloudMessage"
+    },
+    {
+        name:"Use Memo Example",
+        link:"/usememo"
     }
+    ,
+    {
+        name:"Use Ref",
+        link:"/useref"
+    }
+
 ]
 let Header = () => {
     return (
