@@ -28,7 +28,7 @@ import ViewMessage from "./components/FireBase/Cloud-Message/View-Message";
 
 import EffectUseCleanup from "./components/EffectUseCleanup";
 import RefUse from "./components/refUse";
-
+import { counterContext } from "./context/context";
 
 
 const list = [
@@ -49,6 +49,10 @@ const list = [
 
 function App() {
   const [user, setUser] = useState(list)
+  const [count, setcount] = useState(44)
+
+
+  
 
   let submit = () => {
     console.log("clicked");
@@ -73,44 +77,44 @@ function App() {
   }
   return (
     <>
+      <counterContext.Provider value={count}>
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route element={<Main />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/register" element={<RegisterForm />} />
+              <Route path="/login" element={<LoginForm />} />
+              <Route path="/dashboard" element={<DashbaordPage />} />
+              <Route path="/users" element={<Users users={user} />} />
+              <Route path="/users/user1" element={<User1 />} />
+              <Route path="/usememo" element={<Memouse />} />
+              <Route path="/reuse-hook" element={<DataFetch />} />
+              <Route path="/parambox/:id" element={<ParamBox />} />
+              <Route path="/form" element={<Form />} />
+              <Route path="/useeffect" element={<EffectUseCleanup />} />
+              <Route path="/usememoexp" element={<MemouseExp />} />
+              <Route path="/usecallback" element={<Callbackuse />} />
+              <Route path="/uploadimage" element={<FileUpload />} />
+              <Route path="/FirebaseRealTimeDB" element={<RealTimeDBAdd />} />
+              <Route path="/RealTimeDBList" element={<RealTimeDBList />} />
+              <Route path="/FireStoreDatabaseAdd" element={<FireStoreDatabaseAdd />} />
+              <Route path="/FireStoreDatabaseList" element={<FireStoreDatabaseList />} />
+              <Route path="/useref" element={< RefUse />} />
 
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route element={<Main />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/register" element={<RegisterForm />} />
-            <Route path="/login" element={<LoginForm />} />
-            <Route path="/dashboard" element={<DashbaordPage />} />
-            <Route path="/users" element={<Users users={user} />} />
-            <Route path="/users/user1" element={<User1 />} />
-            <Route path="/usememo" element={<Memouse />} />
-            <Route path="/reuse-hook" element={<DataFetch />} />
-            <Route path="/parambox/:id" element={<ParamBox />} />
-            <Route path="/form" element={<Form />} />
-            <Route path="/useeffect" element={<EffectUseCleanup />} />
-            <Route path="/usememoexp" element={<MemouseExp />} />
-            <Route path="/usecallback" element={<Callbackuse />} />
-            <Route path="/uploadimage" element={<FileUpload />} />
-            <Route path="/FirebaseRealTimeDB" element={<RealTimeDBAdd />} />
-            <Route path="/RealTimeDBList" element={<RealTimeDBList />} />
-            <Route path="/FireStoreDatabaseAdd" element={<FireStoreDatabaseAdd />} />
-            <Route path="/FireStoreDatabaseList" element={<FireStoreDatabaseList />} />
-            <Route path="/useref" element={< RefUse />} />
-            
 
 
-            <Route path="/CloudMessage" element={<ViewMessage />} />
-            
-            
-            
-            <Route path="/*" element={<ErrorPage />} />
-          </Route>
+              <Route path="/CloudMessage" element={<ViewMessage />} />
 
-        </Routes>
-      </BrowserRouter>
 
+
+              <Route path="/*" element={<ErrorPage />} />
+            </Route>
+
+          </Routes>
+        </BrowserRouter>
+      </counterContext.Provider>
 
 
       {/* <Users users={user} handDelete={deletion} /> */}
