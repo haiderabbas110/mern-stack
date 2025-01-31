@@ -2,3 +2,4 @@ LoginRegister/node_modules
 LoginRegister/.env
 Backend/node_modules
 Frontend/node_modules
+express-login-app/node_modules
